@@ -61,10 +61,10 @@ I wanted to share some of my preferences here so we can be more aligned as we wo
 ## Branches
 
 - Start a new branch whenever you begin fixing a bug or starting a new feature — not automatically on every new session. If a new session continues the same logical piece of work (e.g. following up on the same fix or feature), stay on the existing branch instead of creating another one.
-- Never commit directly to `main`. If you are on `main` and about to make changes, stop and propose a branch first.
+- Never commit directly to `master`. If you are on `master` and about to make changes, stop and propose a branch first.
 - Propose the branch name and wait for a go-ahead before creating or switching.
 - Name the branch after the work: `fix/web-thread-cpu-spike`, `feat/auth-magic-link`.
-- If a branch was cut before the shape of the work was clear, rename it once it is: read `git diff main...HEAD`, pick a descriptive name, run `git branch -m <new-name>`, confirm with `git branch`. If the branch is already on the remote, say so and ask before deleting the old remote name.
+- If a branch was cut before the shape of the work was clear, rename it once it is: read `git diff master...HEAD`, pick a descriptive name, run `git branch -m <new-name>`, confirm with `git branch`. If the branch is already on the remote, say so and ask before deleting the old remote name.
 - One branch per logical piece of work. If a second unrelated concern lands on the branch, stop and propose how to split it (which commits move where) before touching anything.
 
 ## Commits
@@ -99,10 +99,10 @@ I wanted to share some of my preferences here so we can be more aligned as we wo
 ## Pull Requests
 
 - Share the proposed title/description and wait for a go-ahead before pushing a branch for review.
-- Rebase onto latest `main` before opening. Stale branches conflict and waste a review round. If the branch is already pushed, this needs a force push — see "Rewriting history".
+- Rebase onto latest `master` before opening. Stale branches conflict and waste a review round. If the branch is already pushed, this needs a force push — see "Rewriting history".
 - Don't add any model/agent attribution info (e.g. "Generated with Claude", "Co-Authored-By: " or similar footers) to PR descriptions.
 - Make sure titles follow conventions from the repo. They should be simple and easy to understand. Conventional commit styles in projects that use them, i.e. "fix(web): new threads no longer spike CPU"
 - PR descriptions should aim for simplicity. Open with a minimal, clear description of the problem. Follow up with how you solved it.
-- **Hand me a link, don't open the PR.** Push the branch, then give me a prefilled compare URL: `https://github.com/<owner>/<repo>/compare/main...<branch>?expand=1`, with `title` and `body` query params filled in and URL-encoded. I open it, check the title and description, and merge it myself.
+- **Hand me a link, don't open the PR.** Push the branch, then give me a prefilled compare URL: `https://github.com/<owner>/<repo>/compare/master...<branch>?expand=1`, with `title` and `body` query params filled in and URL-encoded. I open it, check the title and description, and merge it myself.
   - No `gh pr create`, no API. The link is the handoff.
   - The link must open a normal PR, not a draft. No draft flag, no "Draft:" / "WIP:" prefix in the title. Drafts do not get review-bot coverage.
