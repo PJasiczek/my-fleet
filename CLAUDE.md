@@ -27,6 +27,10 @@ I wanted to share some of my preferences here so we can be more aligned as we wo
 - Comments are a great way to clarify functionality and how code is used. Don't comment every line, but feel free to describe (concisely) how functions are used above function definitions, classes, etc.
 - Keep comments up to date! When making changes, it's important to keep things in sync.
 
+## Temporary and working files
+
+- All temporary and working files and folders (scratch scripts, intermediate outputs, logs, test data) go inside the project directory, never in `/tmp` or other system temp directories. They must be covered by `.gitignore`. If they aren't, add the entry before creating them and include that change in the same commit as the current work.
+
 ## Coding preferences (Typescript focused)
 
 - `any` is the enemy. Inferred types are our friend. Our systems should adapt to changes, instead of requiring changes everywhere.
